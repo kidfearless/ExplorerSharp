@@ -1,6 +1,11 @@
 # ExplorerSharp
 
 ExplorerSharp is a VS Code extension that provides a custom Explorer view focused on reducing tree noise.
+Turns this
+<img width="421" height="411" alt="image" src="https://github.com/user-attachments/assets/08a92371-5c49-4b1f-a8c5-8603dec07fc5" />
+Into this
+<img width="416" height="186" alt="image" src="https://github.com/user-attachments/assets/33e5d624-30d6-44cb-92b0-3cb59dbc1999" />
+
 
 ## Features
 
