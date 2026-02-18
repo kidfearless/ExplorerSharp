@@ -1,0 +1,106 @@
+{
+  "name": "explorer-sharp",
+  "displayName": "ExplorerSharp",
+  "description": "Hide folders and flatten single-file directories in the VS Code explorer",
+  "version": "0.0.1",
+  "publisher": "explorersharp",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "ExplorerSharp",
+      "properties": {
+        "explorerSharp.hiddenFolders": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "List of folder paths (relative to workspace root) to hide from the explorer."
+        },
+        "explorerSharp.flattenSingleFileDirectories": {
+          "type": "boolean",
+          "default": true,
+          "description": "When a folder contains only a single file, display it as 'folder/filename.txt' instead of showing the folder."
+        },
+        "explorerSharp.flattenSingleChildDirectories": {
+          "type": "boolean",
+          "default": true,
+          "description": "When a folder contains only a single subfolder, compact them into one entry (like VS Code's compact folders)."
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "explorerSharp",
+          "name": "ExplorerSharp",
+          "icon": "media/explorerSharp.svg",
+          "contextualTitle": "ExplorerSharp"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "explorerSharp.hideFolder",
+        "title": "ExplorerSharp: Hide Folder"
+      },
+      {
+        "command": "explorerSharp.unhideFolder",
+        "title": "ExplorerSharp: Unhide Folder"
+      },
+      {
+        "command": "explorerSharp.unhideAll",
+        "title": "ExplorerSharp: Unhide All Folders"
+      },
+      {
+        "command": "explorerSharp.refresh",
+        "title": "ExplorerSharp: Refresh",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "explorerSharp.refresh",
+          "when": "view == explorerSharp",
+          "group": "navigation"
+        },
+        {
+          "command": "explorerSharp.unhideAll",
+          "when": "view == explorerSharp"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "explorerSharp.hideFolder",
+          "when": "view == explorerSharp && (viewItem == folder || viewItem == flatFolder)",
+          "group": "explorerSharp@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "explorerSharp.hideFolder",
+          "when": "explorerResourceIsFolder",
+          "group": "explorerSharp@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
