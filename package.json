@@ -4,6 +4,11 @@
   "description": "Hide folders and flatten single-file directories in the VS Code explorer",
   "version": "0.0.1",
   "publisher": "explorersharp",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kidfearless/ExplorerSharp.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
