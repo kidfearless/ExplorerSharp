@@ -4,7 +4,8 @@ ExplorerSharp is a VS Code extension that provides a custom Explorer view focuse
 Turns this
 <img width="421" height="411" alt="image" src="https://github.com/user-attachments/assets/08a92371-5c49-4b1f-a8c5-8603dec07fc5" />
 Into this
-<img width="416" height="186" alt="image" src="https://github.com/user-attachments/assets/33e5d624-30d6-44cb-92b0-3cb59dbc1999" />
+<img width="419" height="295" alt="image" src="https://github.com/user-attachments/assets/7c7af242-6d49-4ca8-8ab0-b753a2c3bf70" />
+
 
 
 ## Features
